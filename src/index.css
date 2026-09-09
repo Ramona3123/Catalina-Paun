@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@layer base {
+  :root {
+    --background: 36 33% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 36 33% 98%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 30 30% 55%;
+    --primary-foreground: 36 33% 98%;
+    --secondary: 36 20% 94%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 36 20% 94%;
+    --muted-foreground: 30 10% 40%;
+    --accent: 30 30% 55%;
+    --accent-foreground: 36 33% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 36 33% 98%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 30 30% 55%;
+    --radius: 0.25rem;
+    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FBFBF9;
+    color: #1A1A1A;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: #A68D74;
+    color: #FBFBF9;
+  }
+}
+
+@layer utilities {
+  .font-heading { font-family: var(--font-heading); }
+  .font-body { font-family: var(--font-body); }
+  .font-mono-label { font-family: var(--font-mono); }
+  .text-alabaster { color: #FBFBF9; }
+  .text-obsidian { color: #1A1A1A; }
+  .text-bronze { color: #A68D74; }
+  .text-sage { color: #4A5D4E; }
+  .bg-alabaster { background-color: #FBFBF9; }
+  .bg-obsidian { background-color: #1A1A1A; }
+  .bg-bronze { background-color: #A68D74; }
+  .bg-sage { background-color: #4A5D4E; }
+  .border-hairline { border-width: 0.5px; border-color: rgba(166, 141, 116, 0.35); }
+  .tracking-label { letter-spacing: 0.18em; }
+
+  .lume-img {
+    transition: filter 0.7s ease, transform 0.9s ease;
+  }
+  .lume-img:hover {
+    filter: brightness(1.06) saturate(1.1);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float-soft {
+    animation: float-soft 6s ease-in-out infinite;
+  }
+}
