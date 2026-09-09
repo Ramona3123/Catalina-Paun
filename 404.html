@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Cătălina Păun</title>
-    <script>
-      // Redirecționează totul către index.html păstrând calea
-      var pathSegmentsToKeep = 1;
+    <script type="text/javascript">
+      var segmentCount = 1;
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/') +
+        l.search + l.hash
       );
     </script>
   </head>
