@@ -9,12 +9,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    {
-      name: 'add-nojekyll',
-      closeBundle() {
-        fs.writeFileSync('./dist/.nojekyll', '');
-      }
-    }
   ],
   resolve: {
     alias: {
